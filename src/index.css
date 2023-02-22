@@ -1,13 +1,177 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+  overflow: hidden !important;
+  overflow-y: auto !important;
+  padding-right: 0 !important;
+  float: left;
+  width: 100%;
+  margin: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Cards */
+.css-o69gx8-MuiCardMedia-root {
+  background-color: #f5f4f4;
+  padding: 4rem;
+  height: 16rem;
+  object-fit: contain !important;
+}
+
+.css-1ri6ub7-MuiPaper-root-MuiCard-root {
+  box-shadow: unset !important;
+  border: 1px solid #ededed;
+}
+
+.cardBtn {
+  border-radius: 16px !important;
+  background-color: #00d700 !important;
+  color: black !important;
+  text-transform: capitalize !important;
+  font-weight: 700 !important;
+  margin-left: 1rem !important;
+}
+
+.css-46bh2p-MuiCardContent-root {
+  padding-top: 20px !important;
+}
+
+.css-1t6e9jv-MuiCardActions-root {
+  padding-bottom: 20px !important;
+}
+.header {
+  background-color: #df5e56;
+  height: 5rem;
+  width: 100%;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+}
+.header .logo {
+  width: 136px;
+}
+.header h2 {
+  color: #fff;
+  margin-left: 2rem;
+  font-weight: 400;
+}
+.page {
+  padding: 6rem 15rem;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+.page .actionBtn {
+  text-align: center;
+  margin-top: 3rem;
+  border-radius: 10px;
+}
+.page .actionBtn button {
+  background-color: #c5c5c5;
+  margin: 0 4rem;
+  color: #6c6c6c;
+  font-weight: 600;
+  padding: 6px 26px;
+}
+.page .actionBtn .nextBtn {
+  color: #ffff;
+  background-color: #d32f2f;
+}
+.detailsPage .backBtn {
+  background-color: #d32f2f;
+  color: #ffff;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 8px 26px;
+  display: flex;
+  align-items: center;
+  width: 120px;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+  font-size: 0.9rem !important;
+  margin-top: 1px;
+}
+
+.detailsPage .pokemonCardDetails {
+  margin: 0 auto;
+  margin-top: 6rem;
+}
+
+.detailsPage .pokemonCardDetails .cardMain {
+  display: flex;
+  flex-direction: row;
+}
+
+.cardMain img {
+  width: 140px;
+  height: 140px;
+  margin-right: 20px;
+}
+
+.pokemonTabsinfo .stat {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+.pokemonTabsinfo .stat::after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 100%;
+  left: 75%;
+  background-color: #9b9b9b;
+}
+
+.css-1gsv261 {
+  border-bottom: unset !important;
+}
+
+.css-1ri6ub7-MuiPaper-root-MuiCard-root {
+  height: 32rem;
+}
+
+.notFound {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #999999;
+}
+
+@media screen and (max-width: 768px) {
+  .page {
+    padding: 2rem;
+  }
+  .pokemonTabsinfo .stat {
+    width: 100%;
+  }
+  .pokemonCardDetails {
+    max-width: 100% !important;
+  }
+  .page .actionBtn {
+    display: flex;
+    justify-content: center;
+  }
+  .page .actionBtn button {
+    margin: 0 1rem;
+  }
 }
