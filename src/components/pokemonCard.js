@@ -8,10 +8,10 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import FlavorText from "./flavorText";
 
-function PokemonCard({ cardItem }) {
+function PokemonCard({ cardItem, cardResult }) {
   const [card, setCard] = useState([]);
 
-  const url = cardItem.url;
+  const url = cardResult ? "" : cardItem.url;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -20,32 +20,45 @@ function PokemonCard({ cardItem }) {
 
   return (
     <div className="pokemoneCard">
-      <Link to={`/pokemon/${cardItem.name}`}>
+      <Link to={`/pokemon/${cardResult ? cardResult.name : cardItem.name}`}>
         <Card sx={{ maxWidth: 345 }}>
           <CardMedia
             component="img"
             alt={card.name}
             height="140"
             image={
-              card.sprites &&
-              card.sprites.other["official-artwork"].front_default
+              cardResult
+                ? cardResult.sprites.other["official-artwork"].front_default
+                : card.sprites &&
+                  card.sprites.other["official-artwork"].front_default
             }
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              {card.name}
+              {cardResult ? cardResult.name : card.name}
             </Typography>
-            <FlavorText id={card.id} />
+            <FlavorText id={cardResult ? cardResult.id : card.id} />
           </CardContent>
           <CardActions>
-            <div className="types">
-              {card.types &&
-                card.types.map((type, index) => (
-                  <Button size="small" className="cardBtn" key={index}>
-                    {type.type.name}
-                  </Button>
-                ))}
-            </div>
+            {cardResult ? (
+              <div className="types">
+                {cardResult.types &&
+                  cardResult.types.map((type, index) => (
+                    <Button size="small" className="cardBtn" key={index}>
+                      {type.type.name}
+                    </Button>
+                  ))}
+              </div>
+            ) : (
+              <div className="types">
+                {card.types &&
+                  card.types.map((type, index) => (
+                    <Button size="small" className="cardBtn" key={index}>
+                      {type.type.name}
+                    </Button>
+                  ))}
+              </div>
+            )}
           </CardActions>
         </Card>
       </Link>

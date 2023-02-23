@@ -1,14 +1,16 @@
-import SearchIcon from "@mui/icons-material/Search";
+import { Link } from "react-router-dom";
+import Search from "./search";
 
 function Header() {
   return (
     <div className="header">
-      <img src="/imgs/logo.png" className="logo" alt="pokemon logo" />
-      <h2>Pokemon Gallery</h2>
-      <div className="searchBlock">
-        <input type="text" value="" />
-        <SearchIcon fontSize="10" />
+      <div className="logoBlock">
+        <Link to="/">
+          <img src="/logo.png" className="logo" alt="pokemon logo" />
+        </Link>
+        <h2>Pokemon Gallery</h2>
       </div>
+      <Search />
     </div>
   );
 }

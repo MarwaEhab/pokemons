@@ -1,5 +1,7 @@
 html {
   scroll-behavior: smooth;
+  min-height: 100%;
+  position: relative;
 }
 body {
   padding: 0;
@@ -12,6 +14,7 @@ body {
   float: left;
   width: 100%;
   margin: 0;
+  min-height: 100%;
 }
 
 * {
@@ -63,6 +66,12 @@ a {
   padding: 0 2rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+.logoBlock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .header .logo {
   width: 136px;
@@ -72,10 +81,32 @@ a {
   margin-left: 2rem;
   font-weight: 400;
 }
+.searchBlock {
+  position: relative;
+}
+.searchBlock input {
+  height: 2.5rem;
+  background-color: rgba(225, 225, 225, 0.2);
+  border: none;
+  color: #fff;
+  padding-left: 38px;
+}
+.searchBlock input::placeholder {
+  color: rgb(255, 255, 255, 0.4);
+  font-size: 16px;
+}
+.searchBlock .searchIcon {
+  position: absolute;
+  left: 8px;
+  color: rgb(255, 255, 255, 0.6);
+  font-size: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .page {
   padding: 6rem 15rem;
   background-color: #ffffff;
-  min-height: 100vh;
 }
 .page .actionBtn {
   text-align: center;
@@ -119,6 +150,10 @@ a {
   flex-direction: row;
 }
 
+.detailsPage .types button:first-child {
+  margin-left: unset !important;
+}
+
 .cardMain img {
   width: 140px;
   height: 140px;
@@ -157,9 +192,76 @@ a {
   color: #999999;
 }
 
+.LoadignResult {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.noPokemon {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.noPokemon .css-i4bv87-MuiSvgIcon-root {
+  width: 7em !important;
+  height: 5em !important;
+  color: #999999;
+}
+.noPokemon h2 {
+  color: #df5e56;
+  margin-bottom: 0;
+}
+.noPokemon p {
+  color: #999999;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
 @media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 8rem;
+  }
+  .header .logo {
+    width: 80px;
+  }
+  .header h2 {
+    font-size: 16px;
+  }
+  .searchBlock {
+    width: 100%;
+    margin-top: 8px;
+  }
+  .searchBlock input {
+    width: 100%;
+  }
   .page {
     padding: 2rem;
+    position: relative;
   }
   .pokemonTabsinfo .stat {
     width: 100%;

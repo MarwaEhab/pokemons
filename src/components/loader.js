@@ -1,16 +1,20 @@
-// import {
-//   CircularProgressbar,
-//   ProgressProvider,
-// } from "react-circular-progressbar  ";
+import { Oval } from "react-loader-spinner";
 
 function Loader() {
-  const percentage = 66;
-
   return (
     <div className="loader">
-      {/* <ProgressProvider valueStart={0} valueEnd={66}>
-        {(value) => <CircularProgressbar value={value} />}
-      </ProgressProvider> */}
+      <Oval
+        height={80}
+        width={80}
+        color="#d32f2f"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
+        ariaLabel="oval-loading"
+        secondaryColor="#d32f2f"
+        strokeWidth={2}
+        strokeWidthSecondary={2}
+      />
     </div>
   );
 }
