@@ -249,6 +249,9 @@ a {
   .header .logo {
     width: 80px;
   }
+  .logoBlock svg {
+    height: 30px !important;
+  }
   .header h2 {
     font-size: 16px;
   }
