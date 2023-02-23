@@ -24,11 +24,9 @@ function SearchResult() {
       try {
         const response = await fetchPokemon(query);
         const results = await response.json();
-        console.log(results);
         setPokemon(results);
         setLoading(false);
       } catch (err) {
-        console.log(err);
         setLoading(false);
         setError(true);
         setErrorMsg(`No Pokemon With Name ${query}`);
