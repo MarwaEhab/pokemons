@@ -112,12 +112,14 @@ function Pokemon() {
                   </TabPanel>
                   <TabPanel value={value} index={1}>
                     {details.moves &&
-                      details.moves.map((move) => <div>{move.move.name}</div>)}
+                      details.moves.map((move, index) => (
+                        <div key={index}>{move.move.name}</div>
+                      ))}
                   </TabPanel>
                   <TabPanel value={value} index={2}>
                     {details.abilities &&
-                      details.abilities.map((ability) => (
-                        <div>{ability.ability.name}</div>
+                      details.abilities.map((ability, index) => (
+                        <div key={index}>{ability.ability.name}</div>
                       ))}
                   </TabPanel>
                 </Box>
